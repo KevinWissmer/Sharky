@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/1.png">
+    <title>Sharkinator</title>
+
+    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./style/min_bootstrap/bootstrap.min.css">
+    <script src="./script/imageCacheData.js"></script>
+    <script src="./script/imageCache.js"></script>
+    <script src="./script/audio.js"></script>
+    <script src="./models/world.class.js"></script>
+    <script src="./models/game-object.class.js"></script>
+    <script src="./models/movable-object.class.js"></script>
+    <script src="./models/static-frame-object.class.js"></script>
+    <script src="./models/status-bar.class.js"></script>
+    <script src="./models/static-level-object.class.js"></script>
+    <script src="./models/collectables.class.js"></script>
+    <script src="./models/character.class.js"></script>
+    <script src="./models/jellyfish.class.js"></script>
+    <script src="./models/pufferfish.class.js"></script>
+    <script src="./models/endboss.class.js"></script>
+    <script src="./models/background-object.class.js"></script>
+    <script src="./models/projectile.class.js"></script>
+    <script src="./models/keyboard-object.class.js"></script>
+    <script src="./models/level.class.js"></script>
+    <script src="./level/level1.js"></script>
+    <script src="./level/level2.js"></script>
+    <script src="./level/level3.js"></script>
+    <script src="./level/bosslevel.js"></script>
+    <script src="./script/template.js"></script>
+    <script src="./script/main.js"></script>
+</head>
+
+<body onload="onloadIndex()">
+    <div class="tilt-info device-info">
+        PLEASE TILT YOUR DEVICE
+    </div>
+    <div class="too-small-info device-info">
+        YOUR DEVICE IS TOO SMALL
+    </div>
+
+    
+
+
+    <div class="d-flex flex-row justify-content-center align-items-center">
+        <div id="left-banner" class="banner left-banner rounded-left "></div>
+        <div id="content" class="main-content d-flex flex-column justify-content-center align-items-center">
+            <div class="game-titel-box d-flex flex-column justify-content-center align-items-center">
+                <div>
+                    SHARKY
+                </div>
+            </div>
+            <div class="game-box flex-column d-flex align-items-center justify-content-center">
+                <div id="game_frame"
+                    class=" game-frame-bg rounded game-frame d-flex align-items-center justify-content-center">
+                    <div id="start_screen" class="btn-box start-box">
+                        <div class="loading-bar-wrapper">
+                            <img class="loading-bar-sharky" src="img/1.png" alt="" srcset="">
+                            <div class="loading-bar-bars">
+                                <img src="img/4. Marcadores/green/clean bar/clean_bar_empty_cutted.png" alt="" srcset="">
+                                <img id="loading_bar" src="img/4. Marcadores/green/clean bar/clean_bar_full_cutted.png" alt="" srcset="">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="btn_box" class="btn-box">
+                        <div class="btn-box-content-closed">
+                            <img onclick="openOptionsBox()" src="./img/icons/settings_logo.png" alt="" srcset="">
+                        </div>
+
+                        <div class="control-btn-box">
+                            <div id="control-btn-box"  class="control-btn-box-left">
+                                <img onmousedown="left(true)" onmouseup="left(false)" onmouseout="left(false)" ontouchstart="left(true)" ontouchend="left(false)" src="./img/icons/arrow_btn.png" alt="" srcset="">
+                                <div class="control-btn-box-left-center">
+                                    <img onmousedown="up(true)" onmouseup="up(false)" onmouseout="up(false)" ontouchstart="up(true)" ontouchend="up(false)" src="./img/icons/arrow_btn.png" alt="" srcset="">
+                                    <img onmousedown="down(true)" onmouseup="down(false)" onmouseout="down(false)" ontouchstart="down(true)" ontouchend="down(false)" src="./img/icons/arrow_btn.png" alt="" srcset="">
+                                </div>
+                                <img onmousedown="right(true)" onmouseup="right(false)" onmouseout="right(false)" ontouchstart="right(true)" ontouchend="right(false)" src="./img/icons/arrow_btn.png" alt="" srcset="">
+                            </div>
+                            <div class="control-btn-box-right">
+                                <img onmousedown="bubbleShoot(true)" onmouseup="bubbleShoot(false)" onmouseout="bubbleShoot(false)" ontouchstart="bubbleShoot(true)" ontouchend="bubbleShoot(false)" src="./img/icons/arrow_btn_bubble.png" alt="" srcset="">
+                                    <img onmousedown="slapper(true)" onmouseup="slapper(false)" onmouseout="slapper(false)" ontouchstart="slapper(true)" ontouchend="slapper(false)" src="./img/icons/arrow_btn_slap.png" alt="" srcset="">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="info-box" onclick="closeInfoBox()"
+                        class=" info-box d-none align-items-center justify-content-center flex-column">
+                        <div class="info-box-head d-flex align-items-center justify-content-center">
+                            <h1>Get Sharky through the level:</h1>
+                        </div>
+                        <div class="info-box-content d-flex align-items-start justify-content-md-around flex-column">
+                            <div>
+                                Move Sharky with <span style="color: #FFF;">"W A S D"</span> <br>
+                                or <span style="color: #FFF;">"ARROW-KEYS"</span>. <img
+                                    src="./img/3. Background/info-finish.png" height="150px" alt=""
+                                    style="margin-left: 170px; ">
+                            </div>
+                            <div>
+                                <span style="color: #FFF;">Finnish</span> a level by <br> passing throug the <span
+                                    style="color: #FFF;">Barrieres</span> at the end!
+                            </div>
+                        </div>
+                    </div>
+                    <canvas class="" id="game_canvas" width="720" height="480"></canvas>
+                </div>
+
+                <div class="rounded tutorials-and-controls-box mt-2 align-items-center flex-column">
+                    <div class="control-box mt-2 d-flex align-items-center ">
+                    </div>
+                    <div id="tutorials-box"
+                        class="d-flex align-items-center justify-content-between flex-row tutorials-box">
+                        <div class="single-tutorial-wrapper d-flex  align-items-center justify-content-center">
+                            <div onclick="openInfoBox(infotext_sharky)"
+                                class="rounded single-tutorial d-flex flex-column align-items-center justify-content-start">
+                                <div>Moving <br> Sharky</div>
+                                <img src="./img/3. Background/info-sharkie.png" height="50px" alt="">
+                            </div>
+                        </div>
+                        <div
+                            class="single-tutorial-wrapper d-flex flex-column align-items-center justify-content-center">
+                            <div onclick="openInfoBox(infotext_items)"
+                                class="rounded single-tutorial d-flex flex-column align-items-center justify-content-start">
+
+                                <div>Coins and <br>Poison</div>
+                                <img src="./img/3. Background/poison_and_coin.png" height="50px" alt="">
+                            </div>
+                        </div>
+                        <div
+                            class="single-tutorial-wrapper d-flex flex-column align-items-center justify-content-center">
+                            <div onclick="openInfoBox(infotext_jellies)"
+                                class="rounded single-tutorial d-flex flex-column align-items-center justify-content-start">
+                                <div>Attack <br> Jellyfishes</div>
+                                <img src="./img/2.Enemy/2 Jelly fish/Regular damage/Lila 1.png" height="50px" alt="">
+                            </div>
+                        </div>
+                        <div class="single-tutorial-wrapper d-flex align-items-center justify-content-center">
+                            <div onclick="openInfoBox(infotext_puffer)"
+                                class="rounded single-tutorial d-flex flex-column align-items-center justify-content-start">
+                                <div>Attack <br> Pufferfishes</div>
+                                <img src="./img/2.Enemy/1.Puffer fish (3 color options)/1.Swim/1.swim1.png" height="50px" alt="">
+                            </div>
+                        </div>
+                        <div class="single-tutorial-wrapper d-flex align-items-center justify-content-center">
+                            <div onclick="openInfoBox(infotext_boss)"
+                                class="rounded single-tutorial d-flex flex-column align-items-center justify-content-start">
+                                <div>Attack <br> Bosswhale</div>
+                                <img src="./img/3. Background/tutorial_img_boss.png" height="50px" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="right-banner" class="banner right-banner rounded-right "></div>
+    </div>
+</body>
+
+</html>

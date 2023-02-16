@@ -1,0 +1,4 @@
+class StaticObject extends GameObject {
+
+
+}

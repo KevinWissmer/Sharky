@@ -1,0 +1,4 @@
+class StaticFrameObject extends GameObject {
+
+
+}
