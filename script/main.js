@@ -68,7 +68,6 @@ document.addEventListener('fullscreenchange', exitHandler, false);
  document.addEventListener('webkitfullscreenchange', exitHandler, false);
 
  function exitHandler(){
-    let box = document.getElementById('game_frame')
     if (fullscreen) {
         document.getElementById('help_btn').classList.remove("d-flex-important");
     } else {

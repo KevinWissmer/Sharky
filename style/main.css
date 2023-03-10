@@ -1017,7 +1017,7 @@ input[type=range]::-webkit-slider-runnable-track {
     }
 }
 
-@media only screen and (min-width: 1200px) { 
+@media only screen and (display-mode: fullscreen) { 
     .volume-wrapper p:nth-child(1){
         height: 50%;
     }

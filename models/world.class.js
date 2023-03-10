@@ -16,7 +16,7 @@ class World {
     screen_size = 720;
     bubble_size = 30;
     coin_size = 50;
-    hitbox_activation = true;
+    hitbox_activation = false;
     poison_bubble = false;
     poison_bubble_value = 0.05;
 
