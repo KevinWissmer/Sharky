@@ -10,7 +10,7 @@ let mobileBtn = true;
 let sound = true;
 
 window.addEventListener('keydown', function (e) {
-    if ((e.key == 'ArrowUp' || e.key == 'ArrowDown' || e.key == ' ' || e.key == 'ArrowLeft' || e.key == 'ArrowRight') && e.target == document.body) {
+    if ((e.key == 'Up' || e.key == 'ArrowUp' || e.key == 'Escape' || e.key == 'Esc' || e.key == 'ArrowDown' || e.key == 'Down' || e.key == ' ' || e.key == 'Left' || e.key == 'ArrowLeft' || e.key == 'Right' || e.key == 'ArrowRight') && e.target == document.body) {
         e.preventDefault();
     }
 });
@@ -62,8 +62,26 @@ document.addEventListener('keyup', (event) => {
     changeKeyboarObject(false, event);
 });
 
+document.addEventListener('fullscreenchange', exitHandler, false);
+ document.addEventListener('mozfullscreenchange', exitHandler, false);
+ document.addEventListener('MSFullscreenChange', exitHandler, false);
+ document.addEventListener('webkitfullscreenchange', exitHandler, false);
 
-
+ function exitHandler(){
+    let box = document.getElementById('game_frame')
+    if (fullscreen) {
+        document.getElementById('help_btn').classList.remove("d-flex-important");
+    } else {
+        document.getElementById('help_btn').classList.add("d-flex-important");
+    }
+    fullscreen = !fullscreen;
+    document.getElementById('game_frame').classList.toggle("game-frame-bg");
+    document.getElementById('game_canvas').classList.toggle("fullscreen-canvas");
+    document.getElementById('btn_box').classList.toggle("fullscreen-canvas");
+    document.getElementById('btn_box').classList.toggle("fullscreen-btn-box");
+    document.getElementById('start_screen').classList.toggle("fullscreen-btn-box");
+    document.getElementById('info-box').classList.toggle("info-box-fullscreen");
+ }
 
 async function init() {
     game_canvas = document.getElementById('game_canvas');
@@ -163,18 +181,9 @@ function toggleFullscreen() {
     let box = document.getElementById('game_frame')
     if (fullscreen) {
         document.exitFullscreen()
-        document.getElementById('help_btn').classList.remove("d-flex-important");
     } else {
         box.requestFullscreen();
-        document.getElementById('help_btn').classList.add("d-flex-important");
     }
-    fullscreen = !fullscreen;
-    document.getElementById('game_frame').classList.toggle("game-frame-bg");
-    document.getElementById('game_canvas').classList.toggle("fullscreen-canvas");
-    document.getElementById('btn_box').classList.toggle("fullscreen-canvas");
-    document.getElementById('btn_box').classList.toggle("fullscreen-btn-box");
-    document.getElementById('start_screen').classList.toggle("fullscreen-btn-box");
-    document.getElementById('info-box').classList.toggle("info-box-fullscreen");
 }
 
 function toggleMobileButtons() {
