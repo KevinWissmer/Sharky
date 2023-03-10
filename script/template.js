@@ -106,11 +106,6 @@ let optionsBoxOpenedf = `<div class="btn-box-content-opened" >
         toggle sound
     </div>
 </div>
-<div class="btn-box-element">
-    <div onclick="toggleMobileButtons()">
-        toggle mobile buttons
-    </div>
-</div>
 <div id="help_btn" onclick="openOptionsBoxHelpSection()" class="btn-box-element help-btn">
     <div>
         help
@@ -119,7 +114,7 @@ let optionsBoxOpenedf = `<div class="btn-box-content-opened" >
 
 </div>`;
 
-function optionsBoxOpened(sound, mobileBtn) {
+function optionsBoxOpened(sound) {
     return `<div class="btn-box-content-opened" >
     <img src="./img/icons/close_logo.png" onclick="closeOptionsBox()" alt="" srcset="">
     <div class="btn-box-element">
@@ -130,11 +125,6 @@ function optionsBoxOpened(sound, mobileBtn) {
     <div class="btn-box-element" onclick="toggleSound(); fillOpenOptionsBoxTemplate()">
         <div class="btn-bg-${sound}">
             toggle sound
-        </div>
-    </div>
-    <div class="btn-box-element">
-        <div class="btn-bg-${mobileBtn}" onclick="toggleMobileButtons(); fillOpenOptionsBoxTemplate()">
-            toggle mobile buttons
         </div>
     </div>
     <div id="help_btn" onclick="openOptionsBoxHelpSection()" class="btn-box-element help-btn">

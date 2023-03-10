@@ -70,10 +70,10 @@ document.addEventListener('keyup', (event) => {
 async function init() {
     game_canvas = document.getElementById('game_canvas');
     await loadAllImagesToCache();
-    setAllLevels();   
+    setAllLevels();
 }
 
-function startGame(){
+function startGame() {
     playBgMusic();
     document.getElementById('start_screen').classList.add("d-none");
     world = new World(game_canvas, keyboard);
@@ -88,6 +88,18 @@ function setAllLevels() {
 
 function onloadIndex() {
     init();
+    setTouchBtns();
+}
+
+function setTouchBtns() {
+    mobileBtn = ('ontouchstart' in window) ||
+        (navigator.maxTouchPoints > 0) ||
+        (navigator.msMaxTouchPoints > 0);
+        if (mobileBtn) {
+            document.getElementById('btn_box').innerHTML = optionsBoxClosedMobile;
+        } else {
+            document.getElementById('btn_box').innerHTML = optionsBoxClosed;
+        }
 }
 
 function closeInfoBox() {
@@ -112,12 +124,12 @@ function openOptionsBox() {
     optionsBoxOpenedStatus = true;
 }
 
-function endscreen(){
+function endscreen() {
     document.getElementById('btn_box').innerHTML = endscreenHTML;
 }
 
-function deadscreen(deathtype){
-    if(deathtype == 'shocked'){
+function deadscreen(deathtype) {
+    if (deathtype == 'shocked') {
         document.getElementById('btn_box').innerHTML = deadscreenshockedHTML;
     } else {
         document.getElementById('btn_box').innerHTML = deadscreenpoisonedHTML;
@@ -125,13 +137,13 @@ function deadscreen(deathtype){
     world.lose_sound.play();
 }
 
-function restartWorld(){
+function restartWorld() {
     world.restart();
     closeOptionsBox()
 }
 
 function fillOpenOptionsBoxTemplate() {
-    document.getElementById('btn_box').innerHTML = optionsBoxOpened(sound, mobileBtn);
+    document.getElementById('btn_box').innerHTML = optionsBoxOpened(sound);
 }
 
 function closeOptionsBox() {
