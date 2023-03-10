@@ -132,7 +132,7 @@ function deadscreen(deathtype) {
     } else {
         document.getElementById('btn_box').innerHTML = deadscreenpoisonedHTML;
     }
-    world.lose_sound.play();
+    playLoseSound();
 }
 
 function restartWorld() {

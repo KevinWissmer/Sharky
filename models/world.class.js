@@ -38,9 +38,6 @@ class World {
     bubbles = [];
     life_count = 0;
     game_running = true;
-    bossarea_enter_sound = new Audio('./sounds/boss_intro.mp3');
-    lose_sound = new Audio('./sounds/lose.mp3');
-    win_sound = new Audio('./sounds/win.mp3');
 
     constructor(game_canvas, keyboard) {
         this.game_canvas_ctx = game_canvas.getContext("2d");
@@ -49,13 +46,6 @@ class World {
         this.initLevel();
         this.draw();
         this.setWorld();
-        this.initSound()
-    }
-
-    initSound(){
-        this.bossarea_enter_sound.volume = 0.4 * master_volume;
-        this.lose_sound.volume = 0.4 * master_volume;
-        this.win_sound.volume = 0.4 * master_volume;
     }
 
     stop() {
@@ -128,7 +118,7 @@ class World {
         let index = this.levels.findIndex((element) => element.name == this.current_level.name);
         if (index == this.levels.length - 1) {
             endscreen();
-            this.win_sound.play();
+            playWinSound();
             this.stop();
         } else {
             this.changeToLevel(this.levels[index + 1]);
@@ -146,7 +136,7 @@ class World {
         this.coin_quantity = this.current_level.coin_quantity;
         if (this.current_level.boss_level) {
             this.poison_bubble = true;
-            this.bossarea_enter_sound.play();
+            playBossSound();
             this.enemies[0].animate();
         } else {
             this.poison_bubble = false;
@@ -169,7 +159,7 @@ class World {
         this.setCharacter();
         if (level.boss_level) {
             this.poison_bubble = true;
-            this.bossarea_enter_sound.play();
+            playBossSound();
             this.enemies[0].animate();
         } else {
             this.poison_bubble = false;

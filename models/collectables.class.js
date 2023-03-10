@@ -58,8 +58,10 @@ class Collectable extends MovableObject {
     checkSound(){
         if(!this.sound_started){
             if(this.type == 'poison_light' || this.type == 'poison_dark'){
+                this.bottle_sound.volume = master_volume;
                 this.bottle_sound.play();
             } else {
+                this.coin_sound.volume = master_volume;
                 this.coin_sound.play();
             }
             this.sound_started = true;
