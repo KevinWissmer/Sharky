@@ -950,12 +950,13 @@ canvas {
 
 input[type=range] {
     -webkit-appearance: none;
-    margin: 10px;
-    background-color: transparent;
+    padding: 16px;
+    border-radius: 8px;
+    background: rgb(30 30 61);
 }
 
 input[type=range]::-webkit-slider-runnable-track {
-    width: 300px;
+    width: 50%;
     height: 5px;
     background: rgba(221, 221, 221, 0);
     border: none;
@@ -977,9 +978,46 @@ input[type=range]:focus {
 }
 
 input[type=range]::-webkit-slider-runnable-track {
-    background: rgb(30 30 61);
+    background: rgb(64, 64, 74);
 }
 
 .volume-wrapper{
-    background-color: aliceblue;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.volume-wrapper p:nth-child(3){
+    cursor: pointer;
+    height: 90%;
+    aspect-ratio: 1;
+    margin: 0;
+    margin-left: 16px;
+}
+
+.volume-wrapper p:nth-child(1){
+    height: 90%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    margin-right: 16px;
+}
+
+@media only screen and (max-width: 650px) {
+    
+    .volume-wrapper p:nth-child(3){
+        height: 80%;
+    }
+    
+    .volume-wrapper p:nth-child(1){
+        height: 110%;
+    }
+
+    input[type=range] {
+        padding: 8px;
+        width: 50%;
+    }
 }

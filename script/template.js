@@ -129,10 +129,12 @@ function optionsBoxOpened() {
                 toggle fullscreen
             </div>
         </div>
-        <div class="btn-box-element volume-wrapper" >
-            <p id="sound_volume">${master_volume*100}%</p>
-            <input onchange="changeSoundVolume(event)" id="sound_volume_input" value="${master_volume*100}" type="range">
-            <p onclick="changeSoundMuted()" class="sound-muted-${sound_muted}">aaa</p>
+        <div class="btn-box-element">
+            <div class="volume-wrapper" >
+                <p id="sound_volume">${master_volume*100}%</p>
+                <input onchange="changeSoundVolume(event)" id="sound_volume_input" value="${master_volume*100}" type="range">
+                <p onclick="changeSoundMuted()" class="sound-muted-${sound_muted}"></p>
+            </div>
         </div>
         <div id="help_btn" onclick="openOptionsBoxHelpSection()" class="btn-box-element help-btn">
             <div>
