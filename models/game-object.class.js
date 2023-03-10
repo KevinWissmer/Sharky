@@ -7,6 +7,7 @@ class GameObject {
     box_size = [0,0];
     box_color = '#000000';
     pausetime = 0;
+    img_ratio = 1;
 
     timer_1;
     timer_2;

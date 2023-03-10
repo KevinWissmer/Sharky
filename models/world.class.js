@@ -1,7 +1,7 @@
 class World {
     character = new Character();
     health_bar = new StatusBar('health', 1);
-    poison_bar = new StatusBar('poison', 1);
+    poison_bar = new StatusBar('poison', 0);
     coin_bar = new StatusBar('coin', 0);
     difficulty = 3; //damage-multiplicator (default = 3)
 
@@ -16,7 +16,7 @@ class World {
     screen_size = 720;
     bubble_size = 30;
     coin_size = 50;
-    hitbox_activation = false;
+    hitbox_activation = true;
     poison_bubble = false;
     poison_bubble_value = 0.05;
 

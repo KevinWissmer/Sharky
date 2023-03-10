@@ -159,6 +159,9 @@ class Pufferfish extends MovableObject {
         this.loadImageCache(this.dead);
 
         this.hitbox_narrow_down = 0.25;
+        this.hitbox_narrow_up = 0.05;
+        this.hitbox_narrow_left = 0.05;
+        this.hitbox_narrow_right = 0.05;
         this.x = x;
         this.y = y;
         this.size = 100;

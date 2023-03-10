@@ -141,7 +141,7 @@ function restartWorld() {
 }
 
 function fillOpenOptionsBoxTemplate() {
-    document.getElementById('btn_box').innerHTML = optionsBoxOpened(sound);
+    document.getElementById('btn_box').innerHTML = optionsBoxOpened();
 }
 
 function closeOptionsBox() {

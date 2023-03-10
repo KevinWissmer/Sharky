@@ -17,12 +17,6 @@ class Character extends MovableObject {
     middle_world_end;
     slap_width = 60;
     movable = true;
-    hurt_sound_electric = new Audio('./sounds/character/hurt_electric.mp3');
-    hurt_sound_poison = new Audio('./sounds/character/poison_oof.wav');
-    bubble_shot_sound = new Audio('./sounds/character/bubble_shot.mp3');
-    slap_sound = new Audio('./sounds/character/slap.wav');
-    sleep_sound = new Audio('./sounds/character/char_sleep.mp3');
-    sleep_sound_active = false;
 
 
     constructor() {
@@ -30,15 +24,6 @@ class Character extends MovableObject {
         this.loadAllImageCache();
         this.animate();
         this.moveCharacter();
-        this.initSound();
-    }
-
-    initSound() {
-        this.hurt_sound_electric.volume = master_volume;
-        this.hurt_sound_poison.volume = master_volume;
-        this.sleep_sound.volume = master_volume;
-        this.sleep_sound.loop = true;
-        this.bubble_shot_sound.volume = master_volume;
     }
 
     loadAllImageCache() {
@@ -393,8 +378,8 @@ class Character extends MovableObject {
                 this.current_image = 0;
                 break;
             case new_status == this.images_IDLE_SHORT && this.current_image == 30:
-                this.sleep_sound.play();
-                this.sleep_sound_active = true;
+                playSleepSound();
+                sleep_sound_active = true;
                 this.current_image = 0;
                 this.status = this.images_IDLE_LONG;
                 break;
@@ -442,15 +427,15 @@ class Character extends MovableObject {
 
     checkSound() {
         switch (true) {
-            case this.status != this.images_IDLE_LONG && this.sleep_sound_active:
-                this.sleep_sound_active = false;
-                this.sleep_sound.pause();
+            case this.status != this.images_IDLE_LONG && sleep_sound_active:
+                sleep_sound_active = false;
+                stopSleepSound();
                 break;
             case this.status == this.images_SLAP && this.current_image == 5:
-                this.slap_sound.play();
+                playSlapSound();
                 break;
             case (this.status == this.images_BUBBLESHOOT_NORMAL || this.status == this.images_BUBBLESHOOT_POISONED) && this.current_image == 8:
-                this.bubble_shot_sound.play();
+                playBubbleShotSound();
         }
     }
 
@@ -482,9 +467,9 @@ class Character extends MovableObject {
 
     playDamageSound() {
         if (this.poisoned) {
-            this.hurt_sound_poison.play();
+            playHurtPoisonSound();
         } else {
-            this.hurt_sound_electric.play();
+            playHurtElectricSound();
         }
 
     }

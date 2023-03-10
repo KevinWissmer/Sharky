@@ -120,24 +120,25 @@ let optionsBoxOpenedf = `
     </div>
 </div>`;
 
-function optionsBoxOpened(sound) {
-    return `<div class="btn-box-content-opened" >
-    <img src="./img/icons/close_logo.png" onclick="closeOptionsBox()" alt="" srcset="">
-    <div class="btn-box-element">
-        <div onclick="toggleFullscreen()">
-            toggle fullscreen
+function optionsBoxOpened() {
+    return `
+    <div class="btn-box-content-opened" >
+        <img src="./img/icons/close_logo.png" onclick="closeOptionsBox()" alt="" srcset="">
+        <div class="btn-box-element">
+            <div onclick="toggleFullscreen()">
+                toggle fullscreen
+            </div>
         </div>
-    </div>
-    <div class="btn-box-element" onclick="toggleSound(); fillOpenOptionsBoxTemplate()">
-        <div class="btn-bg-${sound}">
-            toggle sound
+        <div class="btn-box-element volume-wrapper" >
+            <p id="sound_volume">${master_volume*100}%</p>
+            <input onchange="changeSoundVolume(event)" id="sound_volume_input" value="${master_volume*100}" type="range">
+            <p onclick="changeSoundMuted()" class="sound-muted-${sound_muted}">aaa</p>
         </div>
-    </div>
-    <div id="help_btn" onclick="openOptionsBoxHelpSection()" class="btn-box-element help-btn">
-        <div>
-            help
+        <div id="help_btn" onclick="openOptionsBoxHelpSection()" class="btn-box-element help-btn">
+            <div>
+                help
+            </div>
         </div>
-    </div>
     </div>`;
 }
 

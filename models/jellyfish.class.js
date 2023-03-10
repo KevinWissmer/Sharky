@@ -70,6 +70,10 @@ class Jellyfish extends MovableObject {
         this.size = 100;
         this.min_y_barrier = 450;
         this.max_y_barrier = 400;
+        this.hitbox_narrow_up = 0.1;
+        this.hitbox_narrow_down = 0.15;
+        this.hitbox_narrow_left = 0.1;
+        this.hitbox_narrow_right = 0.1;
     }
 
 
