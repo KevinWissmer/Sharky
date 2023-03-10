@@ -133,7 +133,7 @@ function optionsBoxOpened() {
             <div class="volume-wrapper" >
                 <p id="sound_volume">${master_volume*100}%</p>
                 <input onchange="changeSoundVolume(event)" id="sound_volume_input" value="${master_volume*100}" type="range">
-                <p onclick="changeSoundMuted()" class="sound-muted-${sound_muted}"></p>
+                <p id="sound_volume_mute" onclick="changeSoundMuted()" class="sound-muted-${sound_muted}"></p>
             </div>
         </div>
         <div id="help_btn" onclick="openOptionsBoxHelpSection()" class="btn-box-element help-btn">

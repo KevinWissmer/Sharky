@@ -106,6 +106,13 @@ function changeSoundMuted() {
     sound_muted = !sound_muted;
     document.getElementById("sound_volume").innerHTML = `${master_volume * 100} %`;
     document.getElementById("sound_volume_input").value = master_volume * 100;
+    changeMuteIcon();
     changeBgVolume();
     changeSleepSoundVolume();
+}
+
+function changeMuteIcon() {
+    let container = document.getElementById("sound_volume_mute");
+    container.classList.toggle('sound-muted-false');
+    container.classList.toggle('sound-muted-true');
 }

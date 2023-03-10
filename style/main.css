@@ -990,7 +990,7 @@ input[type=range]::-webkit-slider-runnable-track {
 
 .volume-wrapper p:nth-child(3){
     cursor: pointer;
-    height: 90%;
+    height: 70%;
     aspect-ratio: 1;
     margin: 0;
     margin-left: 16px;
@@ -1006,12 +1006,7 @@ input[type=range]::-webkit-slider-runnable-track {
     margin-right: 16px;
 }
 
-@media only screen and (max-width: 650px) {
-    
-    .volume-wrapper p:nth-child(3){
-        height: 80%;
-    }
-    
+@media only screen and (max-width: 650px) { 
     .volume-wrapper p:nth-child(1){
         height: 110%;
     }
@@ -1020,4 +1015,14 @@ input[type=range]::-webkit-slider-runnable-track {
         padding: 8px;
         width: 50%;
     }
+}
+
+.sound-muted-false{
+    background-image: url('./../img/icons/mute.png');
+    background-size: contain;
+}
+
+.sound-muted-true{
+    background-image: url('./../img/icons/volume.png');
+    background-size: contain;
 }
