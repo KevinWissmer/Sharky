@@ -1,60 +1,64 @@
-let infotext_items = `<div class="info-box-head d-flex align-items-center justify-content-center">
-<h1>Gather Items:</h1>
+let infotext_items = `
+<div class="info-box-head d-flex align-items-center justify-content-center">
+    <h1>Gather Items:</h1>
 </div>
 <div class="info-box-content d-flex align-items-start justify-content-md-around flex-column">
-<div>
-    Collect every Coin <img src="./img/4. Marcadores/1. Coins/1.png" height="20px" alt="">! If you found every one of them in a Level, and you get <span style="color: #FFF;">1 extra Life</span> !
-</div>
-<div>
-    Collect every Poisonflask <img src="./img/4. Marcadores/Posión/Animada/1.png" height="30px" alt=""> You can find and fill up your <span style="color: #FFF;">Poisonbar</span>! This will help you later on with the Endboss.
-</div>
+    <div>
+        Collect every Coin <img src="./img/4. Marcadores/1. Coins/1.png" height="20px" alt="">! If you found every one of them in a Level, and you get <span style="color: #FFF;">1 extra Life</span> !
+    </div>
+    <div>
+        Collect every Poisonflask <img src="./img/4. Marcadores/Posión/Animada/1.png" height="30px" alt=""> You can find and fill up your <span style="color: #FFF;">Poisonbar</span>! This will help you later on with the Endboss.
+    </div>
 </div>`;
 
-let infotext_jellies = `<div class="info-box-head d-flex align-items-center justify-content-center">
-<h1>Fight Jellyfishes:</h1>
+let infotext_jellies = `
+<div class="info-box-head d-flex align-items-center justify-content-center">
+    <h1>Fight Jellyfishes:</h1>
 </div>
 <div class="info-box-content d-flex align-items-start justify-content-md-around">
-<div class="info-box-content-left">
-<p>
-    Be carefull around <span style="color: #FFF;">Jellyfishes</span>!
-    They can <span style="color: #FFF;">poison</span> or <span style="color: #FFF;">shock</span> you.
-    Trap those in a bubble with <span style="color: #FFF;">"E"</span>!
-</p> 
-</div>
-<div class="info-box-content-right">
-    <img src="./img/2.Enemy/2 Jelly fish/Súper dangerous/Pink 1.png" alt="" >
-    <img src="./img/3. Background/info-jelly.png" alt="" >
-</div>
+    <div class="info-box-content-left">
+        <p>
+            Be carefull around <span style="color: #FFF;">Jellyfishes</span>!
+            They can <span style="color: #FFF;">poison</span> or <span style="color: #FFF;">shock</span> you.
+            Trap those in a bubble with <span style="color: #FFF;">"E"</span>!
+        </p> 
+    </div>
+    <div class="info-box-content-right">
+        <img src="./img/2.Enemy/2 Jelly fish/Súper dangerous/Pink 1.png" alt="" >
+        <img src="./img/3. Background/info-jelly.png" alt="" >
+    </div>
 </div>`;
 
-let infotext_puffer = `<div class="info-box-head d-flex align-items-center justify-content-center">
-<h1>Fight Pufferfishes:</h1>
+let infotext_puffer = `
+<div class="info-box-head d-flex align-items-center justify-content-center">
+    <h1>Fight Pufferfishes:</h1>
 </div>
 <div class="info-box-content d-flex align-items-start justify-content-md-around">
-<div class="info-box-content-left">
-<p>Be carefull around <span style="color: #FFF;">Pufferfishes</span>!
-    They can <span style="color: #FFF;">poison</span> you, when they're puffed and destroy your <span style="color: #FFF;">bubbles</span>.
-    Slap those from behind with <span style="color: #FFF;">"SPACE"</span>!
-</p> 
-</div>
-<div class="info-box-content-right">
-    <img src="./img/2.Enemy/1.Puffer fish (3 color options)/2.transition/3.transition5.png" alt="" >
-    <img src="./img/3. Background/info-puffer.png" alt="" >
-</div>
+    <div class="info-box-content-left">
+        <p>Be carefull around <span style="color: #FFF;">Pufferfishes</span>!
+            They can <span style="color: #FFF;">poison</span> you, when they're puffed and destroy your <span style="color: #FFF;">bubbles</span>.
+            Slap those from behind with <span style="color: #FFF;">"SPACE"</span>!
+        </p> 
+    </div>
+    <div class="info-box-content-right">
+        <img src="./img/2.Enemy/1.Puffer fish (3 color options)/2.transition/3.transition5.png" alt="" >
+        <img src="./img/3. Background/info-puffer.png" alt="" >
+    </div>
 </div>`;
 
-let infotext_sharky = `<div class="info-box-head d-flex align-items-center justify-content-center">
-<h1>Get Sharky through the level:</h1>
+let infotext_sharky = `
+<div class="info-box-head d-flex align-items-center justify-content-center">
+    <h1>Get Sharky through the level:</h1>
 </div>
 <div class="info-box-content d-flex align-items-start justify-content-md-around">
-<div class="info-box-content-left">
-<p>Move Sharky with <span style="color: #FFF;">"W A S D"</span> or <span style="color: #FFF;">"ARROW-KEYS"</span>. 
-<span style="color: #FFF;">Finnish</span> a level by 
-passing throug the <span style="color: #FFF;">Barrieres</span> at the end!</p> 
-</div>
-<div class="info-box-content-right">
-    <img src="./img/3. Background/info-finish.png" alt="" >
-</div>
+    <div class="info-box-content-left">
+        <p>Move Sharky with <span style="color: #FFF;">"W A S D"</span> or <span style="color: #FFF;">"ARROW-KEYS"</span>. 
+        <span style="color: #FFF;">Finnish</span> a level by 
+        passing throug the <span style="color: #FFF;">Barrieres</span> at the end!</p> 
+    </div>
+    <div class="info-box-content-right">
+        <img src="./img/3. Background/info-finish.png" alt="" >
+    </div>
 </div>`;
 
 let infotext_boss = `
@@ -79,9 +83,8 @@ let optionsBoxClosed = `
 
 let optionsBoxClosedMobile = `
 <div class="btn-box-content-closed">
-<img onclick="openOptionsBox()" src="./img/icons/settings_logo.png" alt="" srcset="">
+    <img onclick="openOptionsBox()" src="./img/icons/settings_logo.png" alt="" srcset="">
 </div>
-
 <div class="control-btn-box">
     <div id="control-btn-box"  class="control-btn-box-left">
         <img onmousedown="left(true)" onmouseup="left(false)" onmouseout="left(false)" ontouchstart="left(true)" ontouchend="left(false)" oncontextmenu="return false;" src="./img/icons/arrow_btn.png" alt="" srcset="">
@@ -97,24 +100,24 @@ let optionsBoxClosedMobile = `
     </div>
 </div>`;
 
-let optionsBoxOpenedf = `<div class="btn-box-content-opened" >
-<img src="./img/icons/close_logo.png" onclick="closeOptionsBox()" alt="" srcset="">
-<div class="btn-box-element">
-    <div onclick="toggleFullscreen()">
-        toggle fullscreen
+let optionsBoxOpenedf = `
+<div class="btn-box-content-opened" >
+    <img src="./img/icons/close_logo.png" onclick="closeOptionsBox()" alt="" srcset="">
+    <div class="btn-box-element">
+        <div onclick="toggleFullscreen()">
+            toggle fullscreen
+        </div>
     </div>
-</div>
-<div class="btn-box-element">
-    <div>
-        toggle sound
+    <div class="btn-box-element">
+        <div>
+            toggle sound
+        </div>
     </div>
-</div>
-<div id="help_btn" onclick="openOptionsBoxHelpSection()" class="btn-box-element help-btn">
-    <div>
-        help
+    <div id="help_btn" onclick="openOptionsBoxHelpSection()" class="btn-box-element help-btn">
+        <div>
+            help
+        </div>
     </div>
-</div>
-
 </div>`;
 
 function optionsBoxOpened(sound) {
@@ -166,30 +169,34 @@ let optionsBoxHelpSection = `<div class="btn-box-content-opened" >
 </div>
 <div class="btn-box-element" >
     <div onclick="openInfoBox(infotext_boss)">
-    <img class="btn-img-help" src="./img/3. Background/tutorial_img_boss.png" alt="">
-    Attack endboss
+        <img class="btn-img-help" src="./img/3. Background/tutorial_img_boss.png" alt="">
+        Attack endboss
     </div>
 </div>
 </div>`;
 
-let startBtn = `<div class="btn-box-element">
-<div onclick="startGame()">
-    START
-</div>
+let startBtn = `
+<div class="btn-box-element">
+    <div onclick="startGame()">
+        START
+    </div>
 </div>`;
 
-let endscreenHTML = `<div onclick="restartWorld()" class="endscreen">
-<div>next round</div>
+let endscreenHTML = `
+<div onclick="restartWorld()" class="endscreen">
+    <div>next round</div>
 </div>`;
 
-let deadscreenshockedHTML = `<div onclick="restartWorld()" class="deadscreen">
-<p>you lost</p>
-<img src="./img/1.Sharkie/6.dead/2.Electro_shock/8.png" alt="">
-<div>try again</div>
+let deadscreenshockedHTML = `
+<div onclick="restartWorld()" class="deadscreen">
+    <p>you lost</p>
+    <img src="./img/1.Sharkie/6.dead/2.Electro_shock/8.png" alt="">
+    <div>try again</div>
 </div>`;
 
-let deadscreenpoisonedHTML = `<div onclick="restartWorld()" class="deadscreen">
-<p>you lost</p>
-<img src="./img/1.Sharkie/6.dead/1.Poisoned/8.png" alt="">
-<div>try again</div>
+let deadscreenpoisonedHTML = `
+<div onclick="restartWorld()" class="deadscreen">
+    <p>you lost</p>
+    <img src="./img/1.Sharkie/6.dead/1.Poisoned/8.png" alt="">
+    <div>try again</div>
 </div>`;
