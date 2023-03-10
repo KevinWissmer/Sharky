@@ -57,41 +57,44 @@ passing throug the <span style="color: #FFF;">Barrieres</span> at the end!</p>
 </div>
 </div>`;
 
-let infotext_boss = `<div class="info-box-head d-flex align-items-center justify-content-center">
-<h1>Fight Boss:</h1>
+let infotext_boss = `
+<div class="info-box-head d-flex align-items-center justify-content-center">
+    <h1>Fight Boss:</h1>
 </div>
 <div class="info-box-content d-flex align-items-start justify-content-md-around">
-<div class="info-box-content-left">
-<p>To damage the boss, you must first hit him with a <span style="color: #FFF;">poison bubbles</span>(<span style="color: #FFF;">"E"</span>)(automatically activated) and then hit him with a slap (<span style="color: #FFF;">"SPACE"</span>).</p> 
-</div>
-<div class="info-box-content-right">
-    <img src="./img/3. Background/sharkie_attack.png" alt="" >
-    <img src="./img/3. Background/boss_hitted.png" alt="" >
-</div>
+    <div class="info-box-content-left">
+        <p>To damage the boss, you must first hit him with a <span style="color: #FFF;">poison bubbles</span>(<span style="color: #FFF;">"E"</span>)(automatically activated) and then hit him with a slap (<span style="color: #FFF;">"SPACE"</span>).</p> 
+    </div>
+    <div class="info-box-content-right">
+        <img src="./img/3. Background/sharkie_attack.png" alt="" >
+        <img src="./img/3. Background/boss_hitted.png" alt="" >
+    </div>
 </div>`;
 
-let optionsBoxClosed = `<div class="btn-box-content-closed">
-<img onclick="openOptionsBox()" src="./img/icons/settings_logo.png" alt="" srcset="">
+let optionsBoxClosed = `
+<div class="btn-box-content-closed">
+    <img onclick="openOptionsBox()" src="./img/icons/settings_logo.png" alt="" srcset="">
 </div>
 `;
 
-let optionsBoxClosedMobile = `<div class="btn-box-content-closed">
+let optionsBoxClosedMobile = `
+<div class="btn-box-content-closed">
 <img onclick="openOptionsBox()" src="./img/icons/settings_logo.png" alt="" srcset="">
 </div>
 
-<div id="control-btn-box" class="control-btn-box">
-<div class="control-btn-box-left">
-    <img onmousedown="left(true)" onmouseup="left(false)" onmouseout="left(false)" ontouchstart="left(true)" ontouchend="left(false)" src="./img/icons/arrow_btn.png" alt="" srcset="">
-    <div class="control-btn-box-left-center">
-        <img onmousedown="up(true)" onmouseup="up(false)" onmouseout="up(false)" ontouchstart="up(true)" ontouchend="up(false)" src="./img/icons/arrow_btn.png" alt="" srcset="">
-        <img onmousedown="down(true)" onmouseup="down(false)" onmouseout="down(false)" ontouchstart="down(true)" ontouchend="down(false)" src="./img/icons/arrow_btn.png" alt="" srcset="">
+<div class="control-btn-box">
+    <div id="control-btn-box"  class="control-btn-box-left">
+        <img onmousedown="left(true)" onmouseup="left(false)" onmouseout="left(false)" ontouchstart="left(true)" ontouchend="left(false)" oncontextmenu="return false;" src="./img/icons/arrow_btn.png" alt="" srcset="">
+        <div class="control-btn-box-left-center">
+            <img onmousedown="up(true)" onmouseup="up(false)" onmouseout="up(false)" ontouchstart="up(true)" ontouchend="up(false)" oncontextmenu="return false;" src="./img/icons/arrow_btn.png" alt="" srcset="">
+            <img onmousedown="down(true)" onmouseup="down(false)" onmouseout="down(false)" ontouchstart="down(true)" ontouchend="down(false)" oncontextmenu="return false;" src="./img/icons/arrow_btn.png" alt="" srcset="">
+        </div>
+        <img onmousedown="right(true)" onmouseup="right(false)" onmouseout="right(false)" ontouchstart="right(true)" ontouchend="right(false)" oncontextmenu="return false;" src="./img/icons/arrow_btn.png" alt="" srcset="">
     </div>
-    <img onmousedown="right(true)" onmouseup="right(false)" onmouseout="right(false)" ontouchstart="right(true)" ontouchend="right(false)" src="./img/icons/arrow_btn.png" alt="" srcset="">
-</div>
-<div class="control-btn-box-right">
-    <img onmousedown="bubbleShoot(true)" onmouseup="bubbleShoot(false)" onmouseout="bubbleShoot(false)" ontouchstart="bubbleShoot(true)" ontouchend="bubbleShoot(false)" src="./img/icons/arrow_btn_bubble.png" alt="" srcset="">
-        <img onmousedown="slapper(true)" onmouseup="slapper(false)" onmouseout="slapper(false)" ontouchstart="slapper(true)" ontouchend="slapper(false)" src="./img/icons/arrow_btn_slap.png" alt="" srcset="">
-</div>
+    <div class="control-btn-box-right">
+        <img onmousedown="bubbleShoot(true)" onmouseup="bubbleShoot(false)" onmouseout="bubbleShoot(false)" ontouchstart="bubbleShoot(true)" ontouchend="bubbleShoot(false)" oncontextmenu="return false;" src="./img/icons/arrow_btn_bubble.png" alt="" srcset="">
+        <img onmousedown="slapper(true)" onmouseup="slapper(false)" onmouseout="slapper(false)" ontouchstart="slapper(true)" ontouchend="slapper(false)" oncontextmenu="return false;" src="./img/icons/arrow_btn_slap.png" alt="" srcset="">
+    </div>
 </div>`;
 
 let optionsBoxOpenedf = `<div class="btn-box-content-opened" >
@@ -139,20 +142,20 @@ let optionsBoxHelpSection = `<div class="btn-box-content-opened" >
 <img src="./img/icons/back.png" onclick="openOptionsBox()" alt="" srcset="">
 <div class="btn-box-element" >
     <div onclick="openInfoBox(infotext_sharky)">
-    <img class="btn-img-help" src="./img/3. Background/info-sharkie.png" alt="">
-    Moving
+        <img class="btn-img-help" src="./img/3. Background/info-sharkie.png" alt="">
+        Moving
     </div>
 </div>
 <div class="btn-box-element" >
     <div onclick="openInfoBox(infotext_items)">
-    <img class="btn-img-help" src="./img/3. Background/poison_and_coin.png"  alt="">
-    Coins and poison
+        <img class="btn-img-help" src="./img/3. Background/poison_and_coin.png"  alt="">
+        Coins and poison
     </div>
 </div>
 <div class="btn-box-element" >
     <div onclick="openInfoBox(infotext_jellies)">
-    <img class="btn-img-help" src="./img/2.Enemy/2 Jelly fish/Regular damage/Lila 1.png" alt="">
-    Attack jellys
+        <img class="btn-img-help" src="./img/2.Enemy/2 Jelly fish/Regular damage/Lila 1.png" alt="">
+        Attack jellys
     </div>
 </div>
 <div class="btn-box-element" >

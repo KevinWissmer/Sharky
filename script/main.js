@@ -15,8 +15,6 @@ window.addEventListener('keydown', function (e) {
     }
 });
 
-document.addEventListener("contextmenu", (e) => { e.preventDefault() });
-
 function changeKeyboarObject(switch_case, event) {
     switch (event.key) {
         case 'a':
@@ -95,11 +93,11 @@ function setTouchBtns() {
     mobileBtn = ('ontouchstart' in window) ||
         (navigator.maxTouchPoints > 0) ||
         (navigator.msMaxTouchPoints > 0);
-        if (mobileBtn) {
-            document.getElementById('btn_box').innerHTML = optionsBoxClosedMobile;
-        } else {
-            document.getElementById('btn_box').innerHTML = optionsBoxClosed;
-        }
+    if (mobileBtn) {
+        document.getElementById('btn_box').innerHTML = optionsBoxClosedMobile;
+    } else {
+        document.getElementById('btn_box').innerHTML = optionsBoxClosed;
+    }
 }
 
 function closeInfoBox() {
